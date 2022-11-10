@@ -1,29 +1,14 @@
-
-
 const getDataBtn = document.getElementById('getData');
-const testBtn = document.getElementById('test');
-const input = document.getElementById('location');
+const getUserInput = document.getElementById('test');
+const userInput = document.getElementById('location');
+const showHouses = document.getElementById('showHouses');
+let index = 0;
+
+let houseData = [];
 
 
-var arr = [{
-    id: 1,
-    name: 'bill'
-  }, {
-    id: 2,
-    name: 'ted'
-  }]
-  
-  var result = arr.map(person => ({ value: person.id, text: person.name }));
-  console.log(result)
-
-testBtn.addEventListener('click', () => {
-    console.log(input.value);
-    document.getElementById("map").innerText= result;
-
-})
-
-
-
+//this code is bascially like a password to have access to the api. 
+//I can explain later if you guys are curious!
 const options = {
 	method: 'GET',
 	headers: {
@@ -33,15 +18,40 @@ const options = {
 };
 
 
-
-const dataFetch =  async () => {
-    const response =  await fetch('https://airbnb13.p.rapidapi.com/search-location?location=bellevue&checkin=2022-11-04&checkout=2022-11-10&adults=4&infants=0&page=2', options)
-    const data =  await response.json();
-    console.log(data);
-
+function myFunction(element) {
+    element = JSON.parse(decodeURIComponent(element))
+    console.log(element);
+    console.log('hello')
 }
 
+//here is the code to actual retrieve the data from the api.
+const dataFetch =  async () => {
+    const response =  await fetch('https://airbnb13.p.rapidapi.com/search-location?location=houston&checkin=2022-11-10&checkout=2022-11-12&adults=4&infants=0&page=2', options)
+    houseData =  await response.json();
+    console.log(houseData);
+    console.log(houseData.results[0])
+
+    houseData.results.forEach((element,index) => {
+        //for each element in array, keep on adding below section to inneraHTML
+        showHouses.innerHTML += 
+        `<div class='card'>
+            <p id='name'>${houseData.results[index].name} </p>
+            <p id='bathroom'>Bathrooms: ${houseData.results[index].bathrooms}</p>
+            <p id='rate'>Rate: $${houseData.results[index].price.rate}</p>
+            <button onclick="myFunction('${encodeURIComponent(JSON.stringify(element))}')">Click me</button>
+        </div>`;
+    });  
+}
 
 getDataBtn.addEventListener('click', dataFetch);
+
+
+
+
+
+
+
+
+
 
 

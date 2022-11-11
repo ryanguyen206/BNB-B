@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-style: italic;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background: rgb(228, 242, 247);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 60%;
+    background: rgb(228, 242, 247);
+    border-radius: 15px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.06); 
+    padding: 10px;
+}
+
+#searchForm {
+    width: 100%;
+    border: 1px solid rgb(178, 201, 222);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+.searchTerm {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+}
+
+.searchTermInput {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    width: auto;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 8px 10px;
+    background: rgb(228, 242, 247);
+    border-radius: 10px;
+    box-shadow: 4px 4px 30px rgba(0, 0, 0, 0.06); 
+}
+
+.searchTerm {
+    padding: 5px;
+    margin: auto;
+}
+

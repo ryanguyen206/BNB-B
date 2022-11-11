@@ -1,0 +1,69 @@
+<!DOCTYPE html> 
+<html lang="en">
+
+<head>  
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="vieport" content="width=device-width, initial-scale=1.0">
+    <title>Search Bar</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link rel="stylesheet" href="index.css">
+
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <section class="container">
+        <form class="form" id="searchForm">
+            <div id="locationDiv" class="searchTerm">
+                <i class="fas fa-search" id="locationSearch">
+                    <input
+                        type="text"
+                        id="location"
+                        class="searchTermInput"
+                        required
+                        placeholder="enter location"
+                    />
+                </i>
+            </div>
+            <div id="checkin_checkout" class="searchTerm">
+                <input
+                    type="date"
+                    id="check-in"
+                    class="searchTermInput"
+                    required
+                />
+                <input
+                    type="date"
+                    id="check-out"
+                    class="searchTermInput"
+                    required
+                />
+            </div>
+            <div id="guests" class="searchTerm">
+                <input type="number"
+                    id="numberOfAdults"
+                    class="searchTermInput"
+                    required
+                    placeholder="number of adults"
+                />
+                <input type="number"
+                    id="numberOfChildren"
+                    class="searchTermInput"
+                    required
+                    placeholder="number of children"
+                />
+                <input type="number"
+                    id="numberOfInfants"
+                    class="searchTermInput"
+                    required
+                    placeholder="number of infants"
+                />
+            </div>
+            <div id="submitButton" class="searchTerm">
+                <input type="submit"/>
+            </div>
+        </form>
+    </section>
+</body>

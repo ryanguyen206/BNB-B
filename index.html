@@ -14,15 +14,64 @@
     <h1>Rent a House</h1>
     <h2>Find a House You'll Love</h2>
 
-    <label for="location"> Search your location</label>
-    <input id="userLocation" type="text" placeholder="Search for your house, eg:WA"> 
-    
-    <button id="getData">Get Data!</button>
-  
+
+    <section class="container">
+        <form class="form" id="searchForm">
+            <div id="locationDiv" class="searchTerm">
+                <i class="fas fa-search" id="locationSearch">
+                    <input
+                        type="text"
+                        id="location"
+                        class="searchTermInput"
+                        required
+                        placeholder="enter location"
+                    />
+                </i>
+            </div>
+            <div id="checkin_checkout" class="searchTerm">
+                <input
+                    type="date"
+                    id="check-in"
+                    class="searchTermInput"
+                    required
+                />
+                <input
+                    type="date"
+                    id="check-out"
+                    class="searchTermInput"
+                    required
+                />
+            </div>
+            <div id="guests" class="searchTerm">
+                <input type="number"
+                    id="numberOfAdults"
+                    class="searchTermInput"
+                    required
+                    placeholder="number of adults"
+                />
+                <input type="number"
+                    id="numberOfChildren"
+                    class="searchTermInput"
+                    required
+                    placeholder="number of children"
+                />
+                <input type="number"
+                    id="numberOfInfants"
+                    class="searchTermInput"
+                    required
+                    placeholder="number of infants"
+                />
+            </div>
+            <div id="submitButton" class="searchTerm">
+                <input type="submit"/>
+            </div>
+        </form>
+    </section>
+
     <div id="showHouses">
         <!-- this div is purposely empty because we are waiting for user input -->
     </div>
 
-    <script   src="index.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

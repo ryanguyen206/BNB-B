@@ -9,30 +9,28 @@ app.use(cors())
 
   app.get('/', (req, res) => {
 
-    const {location} = req.query
-    console.log(location)
+    const {location, checkin, checkout, adults, children ,infants} = req.query
+    console.log(location, checkin, checkout, adults, children, infants)
 
     const options = {
         method: 'GET',
         url: 'https://airbnb13.p.rapidapi.com/search-location',
         params: {
           location: location,
-          checkin: '2022-11-16',
-          checkout: '2022-11-17',
-          adults: '1',
-          children: '0',
-          infants: '0',
+          checkin: checkin,
+          checkout: checkout,
+          adults: adults,
+          children: children,
+          infants: infants,
           page: '1'
         },
         headers: {
           'X-RapidAPI-Key': process.env.API_KEY,
           'X-RapidAPI-Host': 'airbnb13.p.rapidapi.com'
         }
-      };
+    };
     
-
-
-    axios.request(options).then(function (response) {
+    axios.request(options).then(function(response) {
         res.json(response.data.results);
     }).catch(function (error) {
         console.error(error);
@@ -42,3 +40,5 @@ app.use(cors())
 
 
 app.listen(3000, () => console.log('Server is running...'))
+
+

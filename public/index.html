@@ -1,77 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <title>BNB-B</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Rent a House</h1>
     <h2>Find a House You'll Love</h2>
 
-
     <section class="container">
-        <form class="form" id="searchForm">
-            <div id="locationDiv" class="searchTerm">
-                <i class="fas fa-search" id="locationSearch">
-                    <input
-                        type="text"
-                        id="location"
-                        class="searchTermInput"
-                        required
-                        placeholder="enter location"
-                    />
-                </i>
-            </div>
-            <div id="checkin_checkout" class="searchTerm">
-                <input
-                    type="date"
-                    id="check-in"
-                    class="searchTermInput"
-                    required
-                />
-                <input
-                    type="date"
-                    id="check-out"
-                    class="searchTermInput"
-                    required
-                />
-            </div>
-            <div id="guests" class="searchTerm">
-                <input type="number"
-                    id="numberOfAdults"
-                    class="searchTermInput"
-                    required
-                    placeholder="number of adults"
-                />
-                <input type="number"
-                    id="numberOfChildren"
-                    class="searchTermInput"
-                    required
-                    placeholder="number of children"
-                />
-                <input type="number"
-                    id="numberOfInfants"
-                    class="searchTermInput"
-                    required
-                    placeholder="number of infants"
-                />
-            </div>
-            <div id="submitButton" class="searchTerm">
-                <input type="submit"/>
-            </div>
-        </form>
+      <form class="form" id="searchForm">
+        <div id="locationDiv" class="searchTerm">
+          <i class="fas fa-search" id="locationSearch">
+            <input
+              type="text"
+              id="location"
+              class="searchTermInput"
+              required
+              placeholder="enter location"
+            />
+          </i>
+        </div>
+        <div id="checkin_checkout" class="searchTerm">
+          <input type="date" id="check-in" class="searchTermInput" required />
+          <input type="date" id="check-out" class="searchTermInput" required />
+        </div>
+        <div id="guests" class="searchTerm">
+          <input
+            type="number"
+            id="numberOfAdults"
+            class="searchTermInput"
+            required
+            placeholder="number of adults"
+          />
+          <input
+            type="number"
+            id="numberOfChildren"
+            class="searchTermInput"
+            required
+            placeholder="number of children"
+          />
+          <input
+            type="number"
+            id="numberOfInfants"
+            class="searchTermInput"
+            required
+            placeholder="number of infants"
+          />
+        </div>
+        <div id="submitButton" class="searchTerm">
+          <input type="submit" />
+        </div>
+      </form>
+      <div id="dummyButton" onclick="createDummy()">
+        <input type="submit" value="100 requests my ass" />
+      </div>
     </section>
 
     <div id="showHouses">
-        <!-- this div is purposely empty because we are waiting for user input -->
+      <!-- this div is purposely empty because we are waiting for user input -->
     </div>
 
+    <!-- BEGINNING OF MODAL 1 -->
+    <div class="full-img" id="modal1_fullDisplay">
+      <p style="color: yellow">
+        The FIRST Modal is now open. We will need to edit the .css accordingly to our diagrams. For
+        future note: we will probably need to make two seperate "full-img" class for their
+        respective modals with it's own unique properties
+      </p>
+      <input type="submit" value="open modal2 (checkout)" onclick="openModal2()" />
+    </div>
+    <div id="showDummy">
+      <!-- MARCUS: This was originally "showHouses." Remains empty until dummy button is hit-->
+    </div>
+    <!-- END OF MODAL 1 -->
+
+    <!-- BEGINNING OF MODAL 2 -->
+    <!-- Modal Code -->
+    <div class="full-img" id="modal2_fullDisplay">
+      <!-- When thumbnail is clicked, src is changed -->
+      <p style="color: greenyellow">
+        The SECOND Modal is now open. It will be used as a sort of "checkout" pop-up. It uses it's
+        own method "openModal2" that closes out anything related to Modal1. Notice how this text is
+        different to FIRST Modal and boo.png is shown. Press ESC or click outside the text to exit.
+      </p>
+    </div>
+    <!-- END OF MODAL 2 -->
+
     <script src="index.js"></script>
-</body>
+  </body>
 </html>

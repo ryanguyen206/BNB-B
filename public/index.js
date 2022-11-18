@@ -21,13 +21,48 @@ function SearchTerms(location, checkin, checkout, adults, children, infants) {
 
 // Returns true if SearchTerms are correct, otherwise returns false.
 const validateSearchTerms = (terms) => {
-    return (terms.checkinDate < terms.checkoutDate) 
-            && (terms.numberOfAdults > 0)
-            && (terms.numberOfAdults < 5)
-            && (terms.numberOfChildren >= 0)
-            && (terms.numberOfChildren < 6)
-            && (terms.numberOfInfants >= 0)
-            && (terms.numberOfInfants < 6);
+    const currentTime = new Date();
+    const currentDate = currentTime.getFullYear().toString() + '-'
+            + (currentTime.getMonth() + 1).toString() + '-'
+            + currentTime.getDate().toString();
+    console.log("current time " + currentTime);
+    console.log("current time type " + typeof(currentTime));
+    console.log("checkin date " + terms.checkinDate);
+    console.log("checkin date type " + typeof(terms.checkinDate));
+    console.log("checkout date " + terms.checkoutDate);
+    if (terms.checkinDate < currentDate) {
+        alert("Checkin date cannot be earlier than " + currentDate);
+        return false;
+    }
+    if (terms.checkoutDate <= currentDate) {
+        alert("Checkout date cannot be earlier than " + currentDate);
+        return false;
+    }
+    if (terms.checkinDate > terms.checkoutDate) {
+        alert("You cannot checkin before checkout");
+        return false;
+    }
+    if (terms.checkinDate == terms.checkoutDate) {
+        alert("You cannot checkin and checkout on the same day");
+        return false;
+    }
+    if (terms.numberOfAdults <= 0) {
+        alert("There must be adults present");
+        return false;
+    }
+    if (terms.numberOfAdults > 5) {
+        alert("To many adults in one property");
+        return false;
+    }
+    if (terms.numberOfChildren > 4) {
+        alert("Too mane children in one property");
+        return false;
+    }
+    if (terms.numberOfInfants > 6) {
+        alert("There are too many infants in one property");
+        return false;
+    } 
+    return true;
 }
 
 // Reads the data from the HTML form, creates a SearchTerm object,
@@ -50,8 +85,8 @@ const getSearchTerms = (event) => {
         inputCheckinDate.value,
         inputCheckoutDate.value,
         inputAdults.value,
-        inputChildren.value,
-        inputInfants.value);
+        !inputChildren.value ? 0 : inputChildren.value,
+        !inputInfants.value ? 0 : inputInfants.value);
 
     // Validate the data.
     if (validateSearchTerms(terms)) {
@@ -61,15 +96,13 @@ const getSearchTerms = (event) => {
         dataFetch(searchTerms);
     
     } else {
-        // If the data are invalid, display an error message.
-        alert("Incorrect search terms");
+        // If the data are invalid, assign null to the global variable.
         searchTerms = null;
     }
     
     // Make sure that the form is not submitted.
     return false;
 }
-
 
 
 function myFunction(element) {

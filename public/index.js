@@ -80,7 +80,7 @@ function myFunction(element) {
 //here is the code to actual retrieve the data from the api.
 const dataFetch =  async (searchTerms) => {
     console.log(searchTerms);
-    const response = await fetch(`http://localhost:3000?location=${searchTerms.location}&checkin=${searchTerms.checkinDate}&checkout=${searchTerms.checkoutDate}&adults=${searchTerms.numberOfAdults}&children=${searchTerms.numberOfChildren}&infants=${searchTerms.numberOfInfants}`);
+    const response = await fetch(`http://localhost:3000/getData?location=${searchTerms.location}&checkin=${searchTerms.checkinDate}&checkout=${searchTerms.checkoutDate}&adults=${searchTerms.numberOfAdults}&children=${searchTerms.numberOfChildren}&infants=${searchTerms.numberOfInfants}`);
     console.log(response);
     houseData =  await response.json();
     

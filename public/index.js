@@ -107,9 +107,10 @@ const getSearchTerms = (event) => {
 };
 
 function getSpecificHouse(element) {
-  element = JSON.parse(decodeURIComponent(element));
+
   console.log(element);
 }
+
 
 //here is the code to actual retrieve the data from the api.
 const dataFetch = async (searchTerms) => {
@@ -128,9 +129,9 @@ const dataFetch = async (searchTerms) => {
             <p id='name'>${houseData[index].name} </p>
             <p id='bathroom'>Bathrooms: ${houseData[index].bathrooms}</p>
             <p id='rate'>Rate: $${houseData[index].price.rate}</p>
-            <button onclick="getSpecificHouse('${encodeURIComponent(
+            <button onclick="openModal1('${encodeURIComponent(
               JSON.stringify(element)
-            )}')">Click me</button>
+              )}')">Click me</button>          
         </div>`;
   });
 };
@@ -146,8 +147,29 @@ let modal2_displayImg = document.getElementById("modal2_displayImg");
 //MODAL 1 CODE
 
 //Open full view, set values for what's about to display
-function openModal1() {
+const openModal1 = async (element) => {
+  element = JSON.parse(decodeURIComponent(element));
+
+ 
+
+  let housePic =  element.images[0].slice(0, element.images[0].indexOf('?'));
+  housePic = housePic.slice(0, housePic.length);
+
+  console.log(housePic);
+  console.log(element);
   modal1_fullDisplay.style.display = "flex"; //Sets to appear
+  modal1_fullDisplay.innerHTML = 
+      `<p>${element.name}</p>
+      <br/>
+      <p>${element.city}</p>
+      <p>${element.beds}</p>
+      <p>${element.bathrooms}</p>
+      <img width="150" height="150" src= ${housePic}>
+      <p>${element.price.priceItems[0].amount}</p>   
+      `
+
+     // <img src=${housePic}/>
+ // <img src= "https://a0.muscache.com/im/pictures/14548a22-7126-4a95-855e-6d698d3052bc.jpg?im_w=720"/>
   //modal1_displayImg.src = pic; //Sets the desired image
 }
 
@@ -191,11 +213,4 @@ document.addEventListener("keyup", function (event) {
 });
 
 //DUMMY: Creates a single dummy card
-function createDummy() {
-  showDummy.innerHTML += `<div class='card'>
-  <p id='name'>Elon's Retired Refridgerator</p>
-  <p id='bathroom'>Bathrooms: The bushes will do</p>
-  <p id='rate'>Rate: Don't worry about it ;)</p>
-  <button onclick='openModal1()')">Open the modal</button>
-  </div>`;
-}
+

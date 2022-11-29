@@ -66,20 +66,13 @@
         </section>
     
         <div id="showHouses">
-          <!-- this div is purposely empty because we are waiting for user input -->
+          
         </div>
     
 <!------------- BEGINNING OF MODAL 1 ----------->
         <div class="full-img" id="modal1_fullDisplay">
-          <p style="color: white">
-            Price per night:
-            <br />
-            Location:
-            <br />
-            Photos:?
-            <br />
-          </p>
-          <input type="submit" value="Check out now(modal 2)" onclick="openModal2()" />
+   
+          <input type="submit" value="Check out now(modal 2)" onclick="Modaopenl2()" />
         </div>
         <div id="showDummy">
  <!-- MARCUS: This was originally "showHouses." Remains empty until dummy button is hit-->
@@ -90,23 +83,44 @@
         <!-- Modal Code -->
         <div class="full-img" id="modal2_fullDisplay">
           <!-- When thumbnail is clicked, src is changed -->
-          <p style="color: greenyellow">
-            <label for="PricePerNight">Price per night:</label>Price per night:
-            <br />
-            <label for="Location">Location:</label>
-            <br />
-            <label for="CC#">Credit Card Number:</label>
-            <br />
-            <label for="CVV">CVV:</label>
-            <br />
-            <label for="NameForCard">Name under credit card:</label> 
-            <br />
-            <label for="BillAdd">Billing Address:</label> 
-            <br />
-            <label for="Phone#">Phone Number:</label>
-            <br />
-            <label for="Email">Email:</label> 
-          </p>
+          <form action="" method="">
+            <h1>
+                Checkout
+            </h1>
+            <section class="userFirstName">
+                <input type="text" name="userFirstName" id="userFirstName" placeholder="First Name">
+            </section><br/> 
+            <section class="userLastName">
+                <input type="textfield" name="userLastName" id="userLastName" placeholder="Last Name">
+            </section><br />
+            <section class="Address">
+                <input type="text" name="Address" id="Address" placeholder="Billing Address">
+            </section><br />
+            <section class="email">
+                <input type="text" name="email" id="email" placeholder="Email">
+            </section><br />
+            <section class="phoneNumber">
+                <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Phone Number">
+            </section><br />
+            <section class="creditCard">
+                <input id="userCreditCard" type="password" name="userCreditCard" placeholder="Credit Card Number">
+            </section><br /><br /><br />
+            <label for="comments">Comments:</label>
+            <br>
+            <textarea id="comments" name="commentField" rows="5" cols="30">
+              </textarea><br /><br />
+            <section>
+                <label for="volume">
+                    <h1>Rate Our Website</h1>
+                </label>
+        
+                <input id="rating" name="range" type="range" min="0" max="5" step="0.5"></input>
+    
+            </section><br/><br />
+            <section class="submission">
+                <input type="submit" value="Send"></input>
+            </section>
+        </form>
         </div>
         <!-- END OF MODAL 2 -->
     

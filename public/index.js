@@ -106,8 +106,9 @@ const getSearchTerms = (event) => {
   return false;
 };
 
-function myFunction(element) {
+function getSpecificHouse(element) {
   element = JSON.parse(decodeURIComponent(element));
+  console.log(element);
 }
 
 //here is the code to actual retrieve the data from the api.
@@ -127,7 +128,7 @@ const dataFetch = async (searchTerms) => {
             <p id='name'>${houseData[index].name} </p>
             <p id='bathroom'>Bathrooms: ${houseData[index].bathrooms}</p>
             <p id='rate'>Rate: $${houseData[index].price.rate}</p>
-            <button onclick="myFunction('${encodeURIComponent(
+            <button onclick="getSpecificHouse('${encodeURIComponent(
               JSON.stringify(element)
             )}')">Click me</button>
         </div>`;

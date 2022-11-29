@@ -17,9 +17,7 @@
     
  
         <h1 id="quote1">Rent A House</h1>
-        <h2></h2>
-    
-    
+
         <section class="container">
           <form class="form" id="searchForm">
             <div id="locationDiv" class="searchTerm">
@@ -30,7 +28,6 @@
                   required
                   placeholder="enter location"
                 />
-    
             </div>
             <div id="checkin_checkout" class="searchTerm">
               <input type="date" id="check-in" class="searchTermInput" required />
@@ -72,7 +69,7 @@
           <!-- this div is purposely empty because we are waiting for user input -->
         </div>
     
-        <!-- BEGINNING OF MODAL 1 -->
+<!------------- BEGINNING OF MODAL 1 ----------->
         <div class="full-img" id="modal1_fullDisplay">
           <p style="color: yellow">
             The FIRST Modal is now open. We will need to edit the .css accordingly to our diagrams. For
@@ -82,7 +79,7 @@
           <input type="submit" value="open modal2 (checkout)" onclick="openModal2()" />
         </div>
         <div id="showDummy">
-          <!-- MARCUS: This was originally "showHouses." Remains empty until dummy button is hit-->
+ <!-- MARCUS: This was originally "showHouses." Remains empty until dummy button is hit-->
         </div>
         <!-- END OF MODAL 1 -->
     
@@ -106,31 +103,6 @@
       <!-- this div is purposely empty because we are waiting for user input -->
     </div>
 
-    <!-- BEGINNING OF MODAL 1 -->
-    <div class="full-img" id="modal1_fullDisplay">
-      <p style="color: yellow">
-        The FIRST Modal is now open. We will need to edit the .css accordingly to our diagrams. For
-        future note: we will probably need to make two seperate "full-img" class for their
-        respective modals with it's own unique properties
-      </p>
-      <input type="submit" value="open modal2 (checkout)" onclick="openModal2()" />
-    </div>
-    <div id="showDummy">
-      <!-- MARCUS: This was originally "showHouses." Remains empty until dummy button is hit-->
-    </div>
-    <!-- END OF MODAL 1 -->
-
-    <!-- BEGINNING OF MODAL 2 -->
-    <!-- Modal Code -->
-    <div class="full-img" id="modal2_fullDisplay">
-      <!-- When thumbnail is clicked, src is changed -->
-      <p style="color: greenyellow">
-        The SECOND Modal is now open. It will be used as a sort of "checkout" pop-up. It uses it's
-        own method "openModal2" that closes out anything related to Modal1. Notice how this text is
-        different to FIRST Modal and boo.png is shown. Press ESC or click outside the text to exit.
-      </p>
-    </div>
-    <!-- END OF MODAL 2 -->
 
     <script src="index.js"></script>
   </body>

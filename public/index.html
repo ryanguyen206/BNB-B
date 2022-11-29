@@ -71,12 +71,15 @@
     
 <!------------- BEGINNING OF MODAL 1 ----------->
         <div class="full-img" id="modal1_fullDisplay">
-          <p style="color: yellow">
-            The FIRST Modal is now open. We will need to edit the .css accordingly to our diagrams. For
-            future note: we will probably need to make two seperate "full-img" class for their
-            respective modals with it's own unique properties
+          <p style="color: white">
+            Price per night:
+            <br />
+            Location:
+            <br />
+            Photos:?
+            <br />
           </p>
-          <input type="submit" value="open modal2 (checkout)" onclick="openModal2()" />
+          <input type="submit" value="Check out now(modal 2)" onclick="openModal2()" />
         </div>
         <div id="showDummy">
  <!-- MARCUS: This was originally "showHouses." Remains empty until dummy button is hit-->
@@ -88,9 +91,21 @@
         <div class="full-img" id="modal2_fullDisplay">
           <!-- When thumbnail is clicked, src is changed -->
           <p style="color: greenyellow">
-            The SECOND Modal is now open. It will be used as a sort of "checkout" pop-up. It uses it's
-            own method "openModal2" that closes out anything related to Modal1. Notice how this text is
-            different to FIRST Modal and boo.png is shown. Press ESC or click outside the text to exit.
+            <label for="PricePerNight">Price per night:</label>Price per night:
+            <br />
+            <label for="Location">Location:</label>
+            <br />
+            <label for="CC#">Credit Card Number:</label>
+            <br />
+            <label for="CVV">CVV:</label>
+            <br />
+            <label for="NameForCard">Name under credit card:</label> 
+            <br />
+            <label for="BillAdd">Billing Address:</label> 
+            <br />
+            <label for="Phone#">Phone Number:</label>
+            <br />
+            <label for="Email">Email:</label> 
           </p>
         </div>
         <!-- END OF MODAL 2 -->

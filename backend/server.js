@@ -54,7 +54,7 @@ app.get('/getData', (req, res) => {
           page: '1'
         },
         headers: {
-          'X-RapidAPI-Key': process.env.API_KEY,
+          'X-RapidAPI-Key': process.env.DIEGO_KEY,
           'X-RapidAPI-Host': 'airbnb13.p.rapidapi.com'
         }
     };

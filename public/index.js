@@ -1,9 +1,12 @@
-const showHouses = document.getElementById("showHouses");
+let showHouses = document.getElementById("showHouses");
 
 let houseData = [];
 
 var searchTerms;
 
+function test() {
+  console.log('ayo');
+}
 // Add the form submission event handler when the page is loaded.
 addEventListener("load", () => {
   document.getElementById("searchForm").addEventListener("submit", getSearchTerms);
@@ -106,33 +109,32 @@ const getSearchTerms = (event) => {
   return false;
 };
 
-function getSpecificHouse(element) {
-
-  console.log(element);
-}
-
-
 //here is the code to actual retrieve the data from the api.
 const dataFetch = async (searchTerms) => {
-  console.log(searchTerms);
+
   const response = await fetch(
     `http://localhost:3000/getData?location=${searchTerms.location}&checkin=${searchTerms.checkinDate}&checkout=${searchTerms.checkoutDate}&adults=${searchTerms.numberOfAdults}&children=${searchTerms.numberOfChildren}&infants=${searchTerms.numberOfInfants}`
   );
-  console.log(response);
+
   houseData = await response.json();
 
   console.log(houseData);
 
   houseData.forEach((element, index) => {
     //for each element in array, keep on adding below section to inneraHTML
-    showHouses.innerHTML += `<div class='card'>
-            <p id='name'>${houseData[index].name} </p>
-            <p id='bathroom'>Bathrooms: ${houseData[index].bathrooms}</p>
-            <p id='rate'>Rate: $${houseData[index].price.rate}</p>
-            <button onclick="openModal1('${encodeURIComponent(
+    showHouses.innerHTML += 
+    `<div class='houseCard'>
+            <div class="picContainer">
+            <img class="houseCardPicture" src=${element.images[0]}>
+            </div>
+            <p class="houseCardName">${houseData[index].name} </p>
+            <p class='houseCardPrice'><strong>$${houseData[index].price.rate}</strong> per night</p>
+            <div class="houseOpenModal">
+            <i class="fa-solid fa-plus" onclick="openModal1('${encodeURIComponent(
               JSON.stringify(element)
-              )}')">Click me</button>          
-        </div>`;
+              )}')"></i>
+            </div>       
+    </div>`;
   });
 };
 
@@ -156,7 +158,7 @@ const openModal1 = async (element) => {
   housePic = housePic.slice(0, housePic.length);
 
   console.log(housePic);
-  console.log(element);
+
   modal1_fullDisplay.style.display = "flex"; //Sets to appear
   modal1_fullDisplay.innerHTML = 
       `<p>${element.name}</p>
@@ -168,8 +170,6 @@ const openModal1 = async (element) => {
       <p>${element.price.priceItems[0].amount}</p>   
       `
 
-     // <img src=${housePic}/>
- // <img src= "https://a0.muscache.com/im/pictures/14548a22-7126-4a95-855e-6d698d3052bc.jpg?im_w=720"/>
   //modal1_displayImg.src = pic; //Sets the desired image
 }
 

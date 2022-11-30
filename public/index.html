@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/7b442a18a3.js" crossorigin="anonymous"></script>
     <title>BNB-B</title>
   </head>
   <body>
@@ -60,14 +61,26 @@
               <input type="submit" />
             </div>
           </form>
-          <div id="dummyButton" onclick="createDummy()">
-            <input type="submit" value="100 requests my ass" />
-          </div>
+        
         </section>
     
+        
         <div id="showHouses">
+          <!-- <div class='houseCard'>
+            <div class="picContainer">
+              <img class="houseCardPicture" src="https://a0.muscache.com/im/pictures/c2d0f511-9cc6-4981-a205-a250d943d901.jpg">
+            </div>
+            <p class="houseCardName">${houseData[index].name} </p>
+            <p class='houseCardPrice'>$:$${houseData[index].price.rate}</p>
+               
+            <div class="houseOpenModal">
+              <i onclick="test()" class="fa-solid fa-plus"></i>
+            </div>
+   
+          </div> -->
           
         </div>
+       
     
 <!------------- BEGINNING OF MODAL 1 ----------->
         <div class="full-img" id="modal1_fullDisplay">
@@ -128,9 +141,7 @@
       </body>
     </html>
 
-    <div id="showHouses">
-      <!-- this div is purposely empty because we are waiting for user input -->
-    </div>
+
 
 
     <script src="index.js"></script>

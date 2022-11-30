@@ -1,5 +1,8 @@
 * {
-   font-family: 'Poppins', sans-serif
+   font-family: 'Poppins', sans-serif;
+   padding:0;
+   margin:0;
+  box-sizing: border-box;
 }
 
 
@@ -7,7 +10,8 @@ body {
   background-image: url("bnb_bg.png");
   background-size: auto;
   background-attachment: fixed;
-  margin:0;
+  
+
 }
 
 /* MARCUS'S MODAL CODE */
@@ -97,6 +101,88 @@ body {
 }
 
 
+#showHouses {
+  display:grid;
+  margin:20px auto;
+  text-align: center;
+  padding:40px;
+  max-width: 1500px;
+  grid-template-columns: repeat(auto-fill , minmax(300px,1fr));
+  grid-auto-rows: minmax(30px, auto);
+  gap: 30px;
+ 
+
+}
+
+.houseCard {
+  position:relative;
+  z-index: 100;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 30px rgba(0,0,0,0.50);
+  border-radius: 20px;
+}
+
+.picContainer {
+
+  min-width: 100%;
+  max-height:175px;
+}
+
+.houseCardPicture
+{
+  object-fit: cover;
+  height:100%;
+  width:100%;
+
+  display:block;
+  clip-path:polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  border-radius: 20px 20px 0 0;
+
+}
+
+.houseCardName {
+  min-height:90px;
+
+  padding:15px;
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.houseCardPrice {
+  min-height:50px;
+  margin-bottom:50px;
+}
+
+.houseOpenModal {
+  position: absolute;
+  bottom: 0;
+  border:1px solid black;
+  background-color: lightgray;
+  width:100%;
+  min-height:50px;
+  padding: 10px 0;
+}
+
+.houseOpenModal:hover {
+  cursor: pointer;
+}
+
+.houseOpenModal i {
+  position: absolute;
+  bottom: 0;
+  left:0;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
+  width:100%;
+
+
+}
 
 #location {
   margin:0 auto;
@@ -107,7 +193,6 @@ body {
   border-radius: 60px;
   padding: 15px;
   border: 2px solid lightgray;
-  
 }
 
 #location input {
@@ -181,5 +266,6 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus, 
 input:-webkit-autofill:active
 {
+  box-shadow:0 0 0 30px white inset !important;
   -webkit-box-shadow: 0 0 0 30px white inset !important;
 }

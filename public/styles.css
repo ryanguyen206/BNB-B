@@ -55,7 +55,7 @@ body {
    align-items: center;
    justify-content: center;
    z-index: 100;
-   animation: fadeIn 0.4s;
+   animation: fadeIn .4s;
    text-align: center;
  }
  
@@ -160,7 +160,6 @@ body {
 .houseOpenModal {
   position: absolute;
   bottom: 0;
-  border:1px solid black;
   background-color: lightgray;
   width:100%;
   min-height:50px;
@@ -193,6 +192,11 @@ body {
   border-radius: 60px;
   padding: 15px;
   border: 2px solid lightgray;
+}
+
+.modalOne p {
+  color:white;
+
 }
 
 #location input {

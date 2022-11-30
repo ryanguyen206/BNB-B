@@ -151,23 +151,20 @@ let modal2_displayImg = document.getElementById("modal2_displayImg");
 //Open full view, set values for what's about to display
 const openModal1 = async (element) => {
   element = JSON.parse(decodeURIComponent(element));
-
- 
-
-  let housePic =  element.images[0].slice(0, element.images[0].indexOf('?'));
-  housePic = housePic.slice(0, housePic.length);
-
-  console.log(housePic);
+  // let housePic =  element.images[0].slice(0, element.images[0].indexOf('?'));
+  // housePic = housePic.slice(0, housePic.length);
+  // console.log(housePic);
 
   modal1_fullDisplay.style.display = "flex"; //Sets to appear
   modal1_fullDisplay.innerHTML = 
-      `<p>${element.name}</p>
-      <br/>
-      <p>${element.city}</p>
-      <p>${element.beds}</p>
-      <p>${element.bathrooms}</p>
-      <img width="150" height="150" src= ${housePic}>
-      <p>${element.price.priceItems[0].amount}</p>   
+      `
+      <div class='modalOne'>
+      <p>Name: ${element.name}</p>
+      <p>City: ${element.city}</p>
+      <p>Beds: ${element.beds}</p>
+      <p>Bathrooms: ${element.bathrooms}</p>
+      <p>Price: ${element.price.rate}</p>   
+      </div>
       `
 
   //modal1_displayImg.src = pic; //Sets the desired image

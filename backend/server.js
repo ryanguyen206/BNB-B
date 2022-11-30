@@ -23,23 +23,17 @@ app.get('/', (req,res) => {
 }) 
 })
 
-app.get('/javascript', (req,res) =>{
-  res.sendFile(path.join(__dirname, "../public/index.js"))
-}) 
+// app.get('/javascript', (req,res) =>{
+//   res.sendFile(path.join(__dirname, "../public/index.js"))
+// }) 
 
-app.get('/css', (req,res) =>{
-  res.sendFile(path.join(__dirname, "../public/styles.css"))
-}) 
-
-
-
-
-
+// app.get('/css', (req,res) =>{
+//   res.sendFile(path.join(__dirname, "../public/styles.css"))
+// }) 
 
 app.get('/getData', (req, res) => {
 
     const {location, checkin, checkout, adults, children ,infants} = req.query
-    console.log(location, checkin, checkout, adults, children, infants)
 
     const options = {
         method: 'GET',

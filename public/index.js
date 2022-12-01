@@ -163,7 +163,8 @@ const openModal1 = async (element) => {
       <p>City: ${element.city}</p>
       <p>Beds: ${element.beds}</p>
       <p>Bathrooms: ${element.bathrooms}</p>
-      <p>Price: ${element.price.rate}</p>   
+      <p>Price: ${element.price.rate}</p>
+      <button onclick="openModal2()">Checkout</button>   
       </div>
       `
 
@@ -208,6 +209,11 @@ document.addEventListener("keyup", function (event) {
     //For some reason this works for modal2 still
   }
 });
+
+function alertUser(){
+  alert("Checkout Complete");
+  modal2_fullDisplay.style.display = "none"
+}
 
 //DUMMY: Creates a single dummy card
 

@@ -24,12 +24,13 @@ function SearchTerms(location, checkin, checkout, adults, children, infants) {
 // Returns true if SearchTerms are correct, otherwise returns false.
 const validateSearchTerms = (terms) => {
   const currentTime = new Date();
+  const month = (currentTime.getMonth() + 1).toString();
+  const day = currentTime.getDate().toString();
+  const monthFmt = month.length == 1 ? `0${month}` : month;
+  const dayFmt = day.length == 1 ? `0${day}` : day;
   const currentDate =
     currentTime.getFullYear().toString() +
-    "-" +
-    (currentTime.getMonth() + 1).toString() +
-    "-" +
-    currentTime.getDate().toString();
+    "-" + monthFmt + "-" + dayFmt;
   console.log("current time " + currentTime);
   console.log("current time type " + typeof currentTime);
   console.log("checkin date " + terms.checkinDate);
@@ -164,11 +165,9 @@ const openModal1 = async (element) => {
       <p>Beds: ${element.beds}</p>
       <p>Bathrooms: ${element.bathrooms}</p>
       <p>Price: ${element.price.rate}</p>
-      <button onclick="openModal2()">Checkout</button>   
+      <button onclick="openModal2()" id="buttonModal2">Checkout</button>   
       </div>
       `
-
-  //modal1_displayImg.src = pic; //Sets the desired image
 }
 
 //MODAL 2 CODE

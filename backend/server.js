@@ -11,16 +11,12 @@ const fs = require('fs');
 app.use(express.static('public'))
 
 
-
-
 app.get('/', (req,res) => {
   res.writeHead(200, {'Content-Type': 'text/html'})
   fs.readFile('index.html', function(err,data) {
-		{
-		res.write(data);
-		res.end();
-		}
-}) 
+    res.write(data);
+    res.end();
+  }) 
 })
 
 // app.get('/javascript', (req,res) =>{
@@ -34,7 +30,7 @@ app.get('/', (req,res) => {
 app.get('/getData', (req, res) => {
 
     const {location, checkin, checkout, adults, children ,infants} = req.query
-
+    console.log("API_KEY = " + process.env.API_KEY);
     const options = {
         method: 'GET',
         url: 'https://airbnb13.p.rapidapi.com/search-location',

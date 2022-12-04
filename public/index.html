@@ -29,11 +29,11 @@
                   required
                   placeholder="enter location"
                 />
-            </div>
+            </div><br />
             <div id="checkin_checkout" class="searchTerm">
               <input type="date" id="check-in" class="searchTermInput" required />
               <input type="date" id="check-out" class="searchTermInput" required />
-            </div>
+            </div><br />
             <div id="guests" class="searchTerm">
               <input
                 type="number"
@@ -56,7 +56,7 @@
                 required
                 placeholder="number of infants"
               />
-            </div>
+            </div><br />
             <div id="submitButton" class="searchTerm">
               <input type="submit" />
             </div>
@@ -94,47 +94,52 @@
     
         <!-- BEGINNING OF MODAL 2 -->
         <!-- Modal Code -->
+        <div id="checkout">
         <div class="full-img" id="modal2_fullDisplay">
+          
           <!-- When thumbnail is clicked, src is changed -->
+          <div id="modal2">
           <form action="" method="">
             <h1>
                 Checkout
             </h1>
             <section class="userFirstName">
-                <input type="text" name="userFirstName" id="userFirstName" placeholder="First Name">
+                <input type="text" name="userFirstName" class="noBorder" id="userFirstName" placeholder="First Name">
             </section><br/> 
             <section class="userLastName">
-                <input type="textfield" name="userLastName" id="userLastName" placeholder="Last Name">
+                <input type="textfield" name="userLastName" class="noBorder" id="userLastName" placeholder="Last Name">
             </section><br />
-            <section class="Address">
-                <input type="text" name="Address" id="Address" placeholder="Billing Address">
+            <section class="address">
+                <input type="text" name="Address" class="noBorder" id="address" placeholder="Billing Address">
             </section><br />
             <section class="email">
-                <input type="text" name="email" id="email" placeholder="Email">
+                <input type="text" name="email" class="noBorder" id="email" placeholder="Email">
             </section><br />
             <section class="phoneNumber">
-                <input type="number" name="phoneNumber" id="phoneNumber" placeholder="Phone Number">
+                <input type="text" name="phoneNumber" class="noBorder" id="phoneNumber" placeholder="Phone Number">
             </section><br />
             <section class="creditCard">
-                <input id="userCreditCard" type="password" name="userCreditCard" placeholder="Credit Card Number">
-            </section><br /><br /><br />
+                <input id="userCreditCard" type="password" name="userCreditCard" class="noBorder" placeholder="Credit Card Number">
+            </section><br />
             <label for="comments">Comments:</label>
             <br>
             <textarea id="comments" name="commentField" rows="5" cols="30">
-              </textarea><br /><br />
-            <section>
+              </textarea><br />
+            <!-- <section>
                 <label for="volume">
                     <h1>Rate Our Website</h1>
                 </label>
         
                 <input id="rating" name="range" type="range" min="0" max="5" step="0.5"></input>
     
-            </section><br/><br />
+            </section> -->
             <section class="submission">
-                <input type="submit" value="Send"></input>
+                <input type="button" id="submission" value="Send" onclick="alertUser()"></input>
             </section>
-        </form>
+          </form>
         </div>
+        </div>
+      </div>
         <!-- END OF MODAL 2 -->
 
 

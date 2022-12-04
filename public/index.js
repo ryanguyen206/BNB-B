@@ -4,8 +4,9 @@ let houseData = [];
 
 var searchTerms;
 
-function test() {
-  console.log('ayo');
+function alertUser(){
+  alert("Checkout Complete");
+  modal2_fullDisplay.style.display = "none"
 }
 // Add the form submission event handler when the page is loaded.
 addEventListener("load", () => {
@@ -35,22 +36,22 @@ const validateSearchTerms = (terms) => {
   console.log("checkin date " + terms.checkinDate);
   console.log("checkin date type " + typeof terms.checkinDate);
   console.log("checkout date " + terms.checkoutDate);
-  if (terms.checkinDate < currentDate) {
-    alert("Checkin date cannot be earlier than " + currentDate);
-    return false;
-  }
-  if (terms.checkoutDate <= currentDate) {
-    alert("Checkout date cannot be earlier than " + currentDate);
-    return false;
-  }
-  if (terms.checkinDate > terms.checkoutDate) {
-    alert("You cannot checkin before checkout");
-    return false;
-  }
-  if (terms.checkinDate == terms.checkoutDate) {
-    alert("You cannot checkin and checkout on the same day");
-    return false;
-  }
+  // if (terms.checkinDate < currentDate) {
+  //   alert("Checkin date cannot be earlier than " + currentDate);
+  //   return false;
+  // }
+  // if (terms.checkoutDate <= currentDate) {
+  //   alert("Checkout date cannot be earlier than " + currentDate);
+  //   return false;
+  // }
+  // if (terms.checkinDate > terms.checkoutDate) {
+  //   alert("You cannot checkin before checkout");
+  //   return false;
+  // }
+  // if (terms.checkinDate == terms.checkoutDate) {
+  //   alert("You cannot checkin and checkout on the same day");
+  //   return false;
+  // }
   if (terms.numberOfAdults <= 0) {
     alert("There must be adults present");
     return false;
@@ -163,7 +164,8 @@ const openModal1 = async (element) => {
       <p>City: ${element.city}</p>
       <p>Beds: ${element.beds}</p>
       <p>Bathrooms: ${element.bathrooms}</p>
-      <p>Price: ${element.price.rate}</p>   
+      <p>Price: ${element.price.rate}</p>
+      <button onclick="openModal2()">Checkout</button>  
       </div>
       `
 
@@ -209,5 +211,4 @@ document.addEventListener("keyup", function (event) {
   }
 });
 
-//DUMMY: Creates a single dummy card
 

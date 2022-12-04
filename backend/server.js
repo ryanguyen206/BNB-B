@@ -16,10 +16,8 @@ app.use(express.static('public'))
 app.get('/', (req,res) => {
   res.writeHead(200, {'Content-Type': 'text/html'})
   fs.readFile('index.html', function(err,data) {
-		{
 		res.write(data);
 		res.end();
-		}
 }) 
 })
 

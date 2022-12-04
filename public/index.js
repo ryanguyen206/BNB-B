@@ -37,22 +37,6 @@ const validateSearchTerms = (terms) => {
   console.log("checkin date " + terms.checkinDate);
   console.log("checkin date type " + typeof terms.checkinDate);
   console.log("checkout date " + terms.checkoutDate);
-  // if (terms.checkinDate < currentDate) {
-  //   alert("Checkin date cannot be earlier than " + currentDate);
-  //   return false;
-  // }
-  // if (terms.checkoutDate <= currentDate) {
-  //   alert("Checkout date cannot be earlier than " + currentDate);
-  //   return false;
-  // }
-  // if (terms.checkinDate > terms.checkoutDate) {
-  //   alert("You cannot checkin before checkout");
-  //   return false;
-  // }
-  // if (terms.checkinDate == terms.checkoutDate) {
-  //   alert("You cannot checkin and checkout on the same day");
-  //   return false;
-  // }
   if (terms.numberOfAdults <= 0) {
     alert("There must be adults present");
     return false;
@@ -62,7 +46,7 @@ const validateSearchTerms = (terms) => {
     return false;
   }
   if (terms.numberOfChildren > 4) {
-    alert("Too mane children in one property");
+    alert("Too many children in one property");
     return false;
   }
   if (terms.numberOfInfants > 6) {
@@ -166,6 +150,7 @@ const openModal1 = async (element) => {
       <p>Beds: ${element.beds}</p>
       <p>Bathrooms: ${element.bathrooms}</p>
       <p>Price: ${element.price.rate}</p>   
+      <button onclick="openModal2()" id="buttonModal2">Checkout</button>  
       </div>
       `
 }

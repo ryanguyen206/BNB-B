@@ -258,7 +258,6 @@ body {
   object-fit: cover;
   height:100%;
   width:100%;
-
   display:block;
   clip-path:polygon(0 0, 100% 0, 100% 85%, 0 100%);
   border-radius: 20px 20px 0 0;
@@ -267,7 +266,6 @@ body {
 
 .houseCardName {
   min-height:90px;
-
   padding:15px;
   text-align: center;
   margin-bottom: 10px;
